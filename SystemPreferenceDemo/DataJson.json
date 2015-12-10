@@ -1,0 +1,54 @@
+{
+    "models":[
+             {
+             "title": "蜂窝移动网络",
+             "prefs": "MOBILE_DATA_SETTINGS_ID",
+              "idString": "0"
+             },
+             {
+             "title": "Wi-Fi",
+             "prefs": "WIFI",
+              "idString": "1"
+             },
+             {
+             "title": "电量",
+             "prefs": "BATTERY_USAGE",
+              "idString": "2"
+             },
+             {
+             "title": "隐私定位",
+             "prefs": "LOCATION_SERVICES",
+              "idString": "3"
+             },
+             {
+             "title": "墙纸",
+             "prefs": "Wallpaper",
+             "idString": "4"
+             },
+             {
+             "title": "蓝牙",
+             "prefs": "Bluetooth",
+              "idString": "5"
+             },
+             {
+             "title": "VPN",
+             "prefs": "General&path=VPN",
+              "idString": "6"
+             },
+             {
+             "title": "通知",
+             "prefs": "NOTIFICATIONS_ID",
+              "idString": "7"
+             },
+             {
+             "title": "后台刷新",
+             "prefs": "General&path=AUTO_CONTENT_DOWNLOAD",
+              "idString": "8"
+             },
+              {
+              "title": "通用",
+              "prefs": "General",
+              "idString": "2"
+              }
+             ]
+}

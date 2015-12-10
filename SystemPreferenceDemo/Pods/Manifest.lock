@@ -1,0 +1,10 @@
+PODS:
+  - YYModel (0.9.7)
+
+DEPENDENCIES:
+  - YYModel
+
+SPEC CHECKSUMS:
+  YYModel: 88f4bdec25975a8f642daa0bb572b039a3ab1db1
+
+COCOAPODS: 0.39.0.beta.3

@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="M4Y-Lb-cyx">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <scenes>
+        <!--Today View Controller-->
+        <scene sceneID="cwh-vc-ff4">
+            <objects>
+                <viewController id="M4Y-Lb-cyx" customClass="TodayViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Ft6-oW-KC0"/>
+                        <viewControllerLayoutGuide type="bottom" id="FKl-LY-JtV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" simulatedAppContext="notificationCenter" id="S3S-Oj-5AN">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="64"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YzS-0D-X8f">
+                                <rect key="frame" x="18" y="4" width="93.5" height="56"/>
+                                <subviews>
+                                    <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="int" translatesAutoresizingMaskIntoConstraints="NO" id="Cxe-ox-kWC">
+                                        <rect key="frame" x="36" y="9" width="20" height="20"/>
+                                        <gestureRecognizers/>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="q7k-hD-Tm1" appends="YES" id="Zzt-5t-DS3"/>
+                                        </connections>
+                                    </imageView>
+                                    <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="蜂窝移动" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="36C-dV-cHZ">
+                                        <rect key="frame" x="22" y="32.5" width="48" height="14.5"/>
+                                        <gestureRecognizers/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="YzT-5j-Ovr" appends="YES" id="9ow-Fb-2oX"/>
+                                        </connections>
+                                    </label>
+                                </subviews>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstItem="Cxe-ox-kWC" firstAttribute="centerY" secondItem="YzS-0D-X8f" secondAttribute="centerY" constant="-9" id="4jm-bd-N4t"/>
+                                    <constraint firstItem="Cxe-ox-kWC" firstAttribute="centerX" secondItem="YzS-0D-X8f" secondAttribute="centerX" id="Ha8-dl-GGK"/>
+                                    <constraint firstItem="36C-dV-cHZ" firstAttribute="top" secondItem="Cxe-ox-kWC" secondAttribute="bottom" constant="4" id="VMS-1c-7Np"/>
+                                    <constraint firstItem="36C-dV-cHZ" firstAttribute="centerX" secondItem="Cxe-ox-kWC" secondAttribute="centerX" id="pHy-8s-9wc"/>
+                                </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="qBr-3e-2sf" appends="YES" id="biN-iF-NTC"/>
+                                </connections>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d0e-Md-Y46">
+                                <rect key="frame" x="113" y="4" width="93" height="56"/>
+                                <subviews>
+                                    <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wifi" translatesAutoresizingMaskIntoConstraints="NO" id="PLL-AY-ECS">
+                                        <rect key="frame" x="36" y="9" width="20" height="20"/>
+                                        <gestureRecognizers/>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="knA-9I-MYv" appends="YES" id="E7Y-07-Vte"/>
+                                        </connections>
+                                    </imageView>
+                                    <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="无线网络" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vvn-Bv-nPG">
+                                        <rect key="frame" x="22" y="32.5" width="48" height="14.5"/>
+                                        <gestureRecognizers/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="d0J-yq-kCC" appends="YES" id="gWn-EU-ORK"/>
+                                        </connections>
+                                    </label>
+                                </subviews>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstItem="Vvn-Bv-nPG" firstAttribute="top" secondItem="PLL-AY-ECS" secondAttribute="bottom" constant="3.5" id="0UZ-BW-fNX"/>
+                                    <constraint firstItem="PLL-AY-ECS" firstAttribute="centerX" secondItem="d0e-Md-Y46" secondAttribute="centerX" id="BCp-Vf-yOf"/>
+                                    <constraint firstItem="Vvn-Bv-nPG" firstAttribute="centerX" secondItem="PLL-AY-ECS" secondAttribute="centerX" id="zue-a5-qkg"/>
+                                </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="RKS-og-E8a" appends="YES" id="jWy-uG-2ay"/>
+                                </connections>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e6U-vm-Ig1">
+                                <rect key="frame" x="208" y="4" width="93.5" height="56"/>
+                                <subviews>
+                                    <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bat" translatesAutoresizingMaskIntoConstraints="NO" id="4Hk-n4-Bs8">
+                                        <rect key="frame" x="36" y="9" width="20" height="20"/>
+                                        <gestureRecognizers/>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="1gJ-TY-vFM" appends="YES" id="DlU-H4-H2q"/>
+                                        </connections>
+                                    </imageView>
+                                    <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="电量" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pie-Fw-Ksx">
+                                        <rect key="frame" x="34" y="32.5" width="24" height="14.5"/>
+                                        <gestureRecognizers/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="zX7-JB-TG6" appends="YES" id="pu5-SX-L6S"/>
+                                        </connections>
+                                    </label>
+                                </subviews>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstItem="pie-Fw-Ksx" firstAttribute="centerX" secondItem="4Hk-n4-Bs8" secondAttribute="centerX" id="1fs-tX-f9S"/>
+                                    <constraint firstItem="4Hk-n4-Bs8" firstAttribute="centerX" secondItem="e6U-vm-Ig1" secondAttribute="centerX" id="29Y-Xw-mzS"/>
+                                    <constraint firstItem="pie-Fw-Ksx" firstAttribute="top" secondItem="4Hk-n4-Bs8" secondAttribute="bottom" constant="3.5" id="8nG-gi-8fu"/>
+                                </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="5jw-JG-j4l" appends="YES" id="KtE-2z-3nu"/>
+                                </connections>
+                            </view>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="YzS-0D-X8f" firstAttribute="top" secondItem="Ft6-oW-KC0" secondAttribute="bottom" constant="4" id="28B-Za-1Ko"/>
+                            <constraint firstAttribute="trailing" secondItem="e6U-vm-Ig1" secondAttribute="trailing" constant="18" id="5ra-zg-Bri"/>
+                            <constraint firstItem="e6U-vm-Ig1" firstAttribute="bottom" secondItem="d0e-Md-Y46" secondAttribute="bottom" id="Ace-zh-LPK"/>
+                            <constraint firstItem="FKl-LY-JtV" firstAttribute="top" secondItem="YzS-0D-X8f" secondAttribute="bottom" constant="4" id="B1X-qQ-WVt"/>
+                            <constraint firstItem="e6U-vm-Ig1" firstAttribute="width" secondItem="YzS-0D-X8f" secondAttribute="width" id="CnD-f0-f5z"/>
+                            <constraint firstItem="d0e-Md-Y46" firstAttribute="top" secondItem="YzS-0D-X8f" secondAttribute="top" id="HHT-LZ-4dx"/>
+                            <constraint firstItem="d0e-Md-Y46" firstAttribute="leading" secondItem="YzS-0D-X8f" secondAttribute="trailing" constant="2" id="HJF-i2-Arv"/>
+                            <constraint firstItem="YzS-0D-X8f" firstAttribute="leading" secondItem="S3S-Oj-5AN" secondAttribute="leading" constant="18" id="J8c-IS-Jgz"/>
+                            <constraint firstItem="d0e-Md-Y46" firstAttribute="width" secondItem="YzS-0D-X8f" secondAttribute="width" id="Reh-MM-rRn"/>
+                            <constraint firstItem="PLL-AY-ECS" firstAttribute="top" secondItem="Cxe-ox-kWC" secondAttribute="top" id="XwK-Uh-BMW"/>
+                            <constraint firstItem="e6U-vm-Ig1" firstAttribute="leading" secondItem="d0e-Md-Y46" secondAttribute="trailing" constant="2" id="bju-d8-QIr"/>
+                            <constraint firstItem="d0e-Md-Y46" firstAttribute="bottom" secondItem="YzS-0D-X8f" secondAttribute="bottom" id="dGN-eh-DBg"/>
+                            <constraint firstItem="e6U-vm-Ig1" firstAttribute="top" secondItem="d0e-Md-Y46" secondAttribute="top" id="snX-DJ-dIL"/>
+                            <constraint firstItem="4Hk-n4-Bs8" firstAttribute="top" secondItem="PLL-AY-ECS" secondAttribute="top" id="wmO-QP-r7v"/>
+                        </constraints>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="64"/>
+                    <connections>
+                        <outlet property="centerDisplayLabel" destination="Vvn-Bv-nPG" id="5Xq-9S-6QI"/>
+                        <outlet property="centerImageView" destination="PLL-AY-ECS" id="JKG-Ql-MBz"/>
+                        <outlet property="leftDisplayLabel" destination="36C-dV-cHZ" id="Fka-02-cCm"/>
+                        <outlet property="leftImageView" destination="Cxe-ox-kWC" id="k7m-Lj-M8P"/>
+                        <outlet property="rightDisplayLabel" destination="pie-Fw-Ksx" id="zNi-Xr-Rbu"/>
+                        <outlet property="rightImageView" destination="4Hk-n4-Bs8" id="3YC-k1-mar"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vXp-U4-Rya" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="q7k-hD-Tm1">
+                    <connections>
+                        <action selector="openCellularSetting:" destination="M4Y-Lb-cyx" id="ptt-FU-mv4"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="qBr-3e-2sf">
+                    <connections>
+                        <action selector="openCellularSetting:" destination="M4Y-Lb-cyx" id="Pqa-kO-Uqb"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="YzT-5j-Ovr">
+                    <connections>
+                        <action selector="openCellularSetting:" destination="M4Y-Lb-cyx" id="j9r-62-srZ"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="RKS-og-E8a">
+                    <connections>
+                        <action selector="openWIFISetting:" destination="M4Y-Lb-cyx" id="NEi-9g-Li7"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="knA-9I-MYv">
+                    <connections>
+                        <action selector="openWIFISetting:" destination="M4Y-Lb-cyx" id="nLi-ys-upB"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="d0J-yq-kCC">
+                    <connections>
+                        <action selector="openWIFISetting:" destination="M4Y-Lb-cyx" id="05u-PU-PFV"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="5jw-JG-j4l">
+                    <connections>
+                        <action selector="openBatterySetting:" destination="M4Y-Lb-cyx" id="ldK-gP-88K"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="1gJ-TY-vFM">
+                    <connections>
+                        <action selector="openBatterySetting:" destination="M4Y-Lb-cyx" id="IcC-CX-wYO"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="zX7-JB-TG6">
+                    <connections>
+                        <action selector="openBatterySetting:" destination="M4Y-Lb-cyx" id="SS7-Ji-q8I"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="516" y="284.5"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="bat" width="20" height="20"/>
+        <image name="int" width="20" height="20"/>
+        <image name="wifi" width="20" height="20"/>
+    </resources>
+</document>
