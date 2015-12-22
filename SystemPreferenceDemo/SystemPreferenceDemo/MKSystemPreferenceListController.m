@@ -64,6 +64,10 @@ static NSString * const kCellReuseIdentifier = @"MKSystemPreferenceCell";
     
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"编辑" style:UIBarButtonItemStylePlain target:self action:@selector(beginEdit:)];
     self.dataArray = [NSMutableArray arrayWithArray:[MKSystemPreferenceModel systemPreferenceArray]];
+    
+    // add longPressGesture to tableView
+    UILongPressGestureRecognizer *longPress = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(longPressGestureRecognized:)];
+    [self.tableView addGestureRecognizer:longPress];
 }
 
 - (void)setCanMove:(BOOL)canMove {
@@ -141,6 +145,98 @@ static NSString * const kCellReuseIdentifier = @"MKSystemPreferenceCell";
     [self updateRightBarButtonItem];
 }
 
+#pragma mark - gesture method
+- (void)longPressGestureRecognized:(UILongPressGestureRecognizer *)gesture {
+    UIGestureRecognizerState state = gesture.state;
+    
+    CGPoint location = [gesture locationInView:self.tableView];
+    NSIndexPath *indexPath = [self.tableView indexPathForRowAtPoint:location];
+    
+    static UIView *snapshot = nil; // a snapshot of the row user is moving
+    static NSIndexPath *sourceIndexPath = nil; // initial indexPath, where gesture is begin
+    
+    switch (state) {
+        case UIGestureRecognizerStateBegan:
+        {
+            if (indexPath) {
+                {
+                    sourceIndexPath = indexPath;
+                    UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
+                    
+                    // Take a snapshot of the selected row using helped method.
+                    snapshot = [self customSnapshotFromView:cell];
+                    
+                    // Add the snapshot as subview, centered at cell's center
+                    __block CGPoint center = cell.center;
+                    snapshot.center = center;
+                    snapshot.alpha = 0.0;
+                    [self.tableView addSubview:snapshot];
+                    
+                    [UIView animateWithDuration:0.25 animations:^{
+                        // offset for gesture location
+                        center.y = location.y;
+                        snapshot.center = center;
+                        snapshot.transform = CGAffineTransformMakeScale(1.05, 1.05);
+                        snapshot.alpha = 0.98;
+                        
+                        // Black out
+                        cell.backgroundColor = [UIColor blackColor];
+                    }];
+                }
+            }
+        }
+            break;
+            
+        case UIGestureRecognizerStateChanged:
+        {
+            CGPoint center = snapshot.center;
+            center.y = location.y;
+            snapshot.center = center;
+            
+            // Is destination valid and is it different from source?
+            if (indexPath && ![indexPath isEqual:sourceIndexPath]) {
+                // update dataSource
+                [self.dataArray exchangeObjectAtIndex:indexPath.row withObjectAtIndex:sourceIndexPath.row];
+                
+                // move the rows
+                [self.tableView moveRowAtIndexPath:sourceIndexPath toIndexPath:indexPath];
+                
+                // and update source so it is in sync with UI changes
+                sourceIndexPath = indexPath;
+            }
+        }
+            break;
+            
+        default:
+        {
+            // Clean up
+            UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:sourceIndexPath];
+            [UIView animateWithDuration:0.25 animations:^{
+                snapshot.center = cell.center;
+                snapshot.transform = CGAffineTransformIdentity;
+                snapshot.alpha = 0.0;
+                
+                // Undo the black-out effect we did
+                cell.backgroundColor = [UIColor whiteColor];
+            } completion:^(BOOL finished) {
+                [snapshot removeFromSuperview];
+                snapshot = nil;
+            }];
+            sourceIndexPath = nil;
+        }
+            break;
+    }
+}
+
+- (UIView *)customSnapshotFromView:(UIView *)inputView {
+    UIView *snapShot = [inputView snapshotViewAfterScreenUpdates:YES];
+    snapShot.layer.masksToBounds = YES;
+    snapShot.layer.cornerRadius = 0.0;
+    snapShot.layer.shadowOffset = CGSizeMake(-5.0, 0.0);
+    snapShot.layer.shadowRadius = 5.0;
+    snapShot.layer.shadowOpacity = 0.4;
+    return snapShot;
+}
 
 /*
 #pragma mark - Navigation
