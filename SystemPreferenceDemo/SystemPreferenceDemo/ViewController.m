@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "MKSystemPreferenceListController.h"
+#import "MKSystemCollectionViewController.h"
 
 @interface ViewController ()
 
@@ -21,8 +22,31 @@
 }
 
 - (IBAction)displaySystemPreferenceList:(id)sender {
-    MKSystemPreferenceListController *systemListVC = [[MKSystemPreferenceListController alloc] initWithStyle:UITableViewStyleGrouped];
-    [self.navigationController pushViewController:systemListVC animated:YES];
+    UIButton *clickedButton = (UIButton *)sender;
+    if ([clickedButton.currentTitle isEqualToString:@"SystemPreferenceList"]) {
+        MKSystemPreferenceListController *systemListVC = [[MKSystemPreferenceListController alloc] initWithStyle:UITableViewStyleGrouped];
+        [self.navigationController pushViewController:systemListVC animated:YES];
+    }
+    else {
+        MKSystemCollectionViewController *systemCollectionListVC = [[MKSystemCollectionViewController alloc] initWithCollectionViewLayout:[self collectionLayout]];
+        [self.navigationController pushViewController:systemCollectionListVC animated:YES];
+    }
+
+}
+
+- (UICollectionViewFlowLayout *)collectionLayout
+{
+    UICollectionViewFlowLayout *layout = [UICollectionViewFlowLayout new];
+    
+    CGFloat itemSpace = 1.0;
+    CGFloat lineSpace = 1.0;
+    NSInteger itemsCountOnHorizontal = 4.0;
+    CGFloat itemWidth = (self.view.bounds.size.width - (itemSpace * (itemsCountOnHorizontal - 1))) / 4;
+    layout.itemSize = CGSizeMake(itemWidth, itemWidth);
+    layout.minimumInteritemSpacing = itemSpace;
+    layout.minimumLineSpacing = lineSpace;
+    
+    return layout;
 }
 
 - (void)didReceiveMemoryWarning {

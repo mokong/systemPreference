@@ -221,6 +221,7 @@ static NSString * const kCellReuseIdentifier = @"MKSystemPreferenceCell";
             } completion:^(BOOL finished) {
                 [snapshot removeFromSuperview];
                 snapshot = nil;
+                [MKSystemPreferenceModel saveDataWithArray:self.dataArray];
             }];
             sourceIndexPath = nil;
         }

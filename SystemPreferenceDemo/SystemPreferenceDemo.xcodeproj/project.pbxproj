@@ -22,6 +22,9 @@
 		3E36C8B51C1808EF0003DF50 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E36C8B31C1808EF0003DF50 /* MainInterface.storyboard */; };
 		3E36C8B91C1808EF0003DF50 /* SystemPreference.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 3E36C8AB1C1808EF0003DF50 /* SystemPreference.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		3E36C8BE1C1821440003DF50 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3E36C8911C17C8390003DF50 /* Assets.xcassets */; };
+		3E4B8AEC1C2A41B60018865A /* MKSystemCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E4B8AEA1C2A41B60018865A /* MKSystemCollectionViewCell.m */; };
+		3E4B8AED1C2A41B60018865A /* MKSystemCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3E4B8AEB1C2A41B60018865A /* MKSystemCollectionViewCell.xib */; };
+		3E4B8AF11C2A41D20018865A /* MKSystemCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E4B8AF01C2A41D20018865A /* MKSystemCollectionViewController.m */; };
 		3EEEAFDA1C192984004DD93E /* DataJson.json in Resources */ = {isa = PBXBuildFile; fileRef = 3EEEAFD91C192984004DD93E /* DataJson.json */; };
 		3EEEAFDE1C192F76004DD93E /* MKSystemPreferenceModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EEEAFDD1C192F76004DD93E /* MKSystemPreferenceModel.m */; };
 		3EEEAFE11C192FA4004DD93E /* MKSystemPreferenceItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EEEAFE01C192FA4004DD93E /* MKSystemPreferenceItem.m */; };
@@ -80,6 +83,11 @@
 		3E36C8B11C1808EF0003DF50 /* TodayViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TodayViewController.m; sourceTree = "<group>"; };
 		3E36C8B41C1808EF0003DF50 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		3E36C8B61C1808EF0003DF50 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3E4B8AE91C2A41B60018865A /* MKSystemCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKSystemCollectionViewCell.h; sourceTree = "<group>"; };
+		3E4B8AEA1C2A41B60018865A /* MKSystemCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKSystemCollectionViewCell.m; sourceTree = "<group>"; };
+		3E4B8AEB1C2A41B60018865A /* MKSystemCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MKSystemCollectionViewCell.xib; sourceTree = "<group>"; };
+		3E4B8AEF1C2A41D20018865A /* MKSystemCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKSystemCollectionViewController.h; sourceTree = "<group>"; };
+		3E4B8AF01C2A41D20018865A /* MKSystemCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKSystemCollectionViewController.m; sourceTree = "<group>"; };
 		3EEEAFD91C192984004DD93E /* DataJson.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = DataJson.json; sourceTree = "<group>"; };
 		3EEEAFDC1C192F76004DD93E /* MKSystemPreferenceModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKSystemPreferenceModel.h; sourceTree = "<group>"; };
 		3EEEAFDD1C192F76004DD93E /* MKSystemPreferenceModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKSystemPreferenceModel.m; sourceTree = "<group>"; };
@@ -165,9 +173,9 @@
 		3E36C89C1C17C8DD0003DF50 /* systemPreferenceList */ = {
 			isa = PBXGroup;
 			children = (
+				3E4B8AE71C2A41770018865A /* collectionViewController */,
+				3E4B8AE61C2A416F0018865A /* tableViewController */,
 				3EEEAFDB1C192F4F004DD93E /* model */,
-				3E36C8A61C17CA2C0003DF50 /* controller */,
-				3E36C8A51C17CA230003DF50 /* view */,
 			);
 			name = systemPreferenceList;
 			sourceTree = "<group>";
@@ -211,6 +219,43 @@
 				3E36C8B61C1808EF0003DF50 /* Info.plist */,
 			);
 			path = SystemPreference;
+			sourceTree = "<group>";
+		};
+		3E4B8AE61C2A416F0018865A /* tableViewController */ = {
+			isa = PBXGroup;
+			children = (
+				3E36C8A61C17CA2C0003DF50 /* controller */,
+				3E36C8A51C17CA230003DF50 /* view */,
+			);
+			name = tableViewController;
+			sourceTree = "<group>";
+		};
+		3E4B8AE71C2A41770018865A /* collectionViewController */ = {
+			isa = PBXGroup;
+			children = (
+				3E4B8AEE1C2A41BD0018865A /* controller */,
+				3E4B8AE81C2A418F0018865A /* view */,
+			);
+			name = collectionViewController;
+			sourceTree = "<group>";
+		};
+		3E4B8AE81C2A418F0018865A /* view */ = {
+			isa = PBXGroup;
+			children = (
+				3E4B8AE91C2A41B60018865A /* MKSystemCollectionViewCell.h */,
+				3E4B8AEA1C2A41B60018865A /* MKSystemCollectionViewCell.m */,
+				3E4B8AEB1C2A41B60018865A /* MKSystemCollectionViewCell.xib */,
+			);
+			name = view;
+			sourceTree = "<group>";
+		};
+		3E4B8AEE1C2A41BD0018865A /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				3E4B8AEF1C2A41D20018865A /* MKSystemCollectionViewController.h */,
+				3E4B8AF01C2A41D20018865A /* MKSystemCollectionViewController.m */,
+			);
+			name = controller;
 			sourceTree = "<group>";
 		};
 		3EEEAFDB1C192F4F004DD93E /* model */ = {
@@ -335,6 +380,7 @@
 			files = (
 				3E36C8951C17C8390003DF50 /* LaunchScreen.storyboard in Resources */,
 				3E36C8921C17C8390003DF50 /* Assets.xcassets in Resources */,
+				3E4B8AED1C2A41B60018865A /* MKSystemCollectionViewCell.xib in Resources */,
 				3EF48E0F1C196AE80038F99F /* SystemPreferenceDemo.entitlements in Resources */,
 				3E36C8901C17C8390003DF50 /* Main.storyboard in Resources */,
 				3EEEAFDA1C192984004DD93E /* DataJson.json in Resources */,
@@ -456,10 +502,12 @@
 				3E36C8A31C17CA1D0003DF50 /* MKSystemPreferenceCell.m in Sources */,
 				3E36C88D1C17C8390003DF50 /* ViewController.m in Sources */,
 				3E36C89F1C17C9E20003DF50 /* MKSystemPreferenceListController.m in Sources */,
+				3E4B8AEC1C2A41B60018865A /* MKSystemCollectionViewCell.m in Sources */,
 				3EEEAFDE1C192F76004DD93E /* MKSystemPreferenceModel.m in Sources */,
 				3EEEAFE11C192FA4004DD93E /* MKSystemPreferenceItem.m in Sources */,
 				3E36C88A1C17C8390003DF50 /* AppDelegate.m in Sources */,
 				3E36C8871C17C8390003DF50 /* main.m in Sources */,
+				3E4B8AF11C2A41D20018865A /* MKSystemCollectionViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
