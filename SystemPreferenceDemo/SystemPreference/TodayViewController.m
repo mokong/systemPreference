@@ -12,7 +12,7 @@
 #import "MKSystemPreferenceItem.h"
 #import "MKCustomButton.h"
 
-@interface TodayViewController () <NCWidgetProviding>
+@interface TodayViewController () <NCWidgetProviding, MKCustomButtonDelegate>
 
 @property (weak, nonatomic) IBOutlet MKCustomButton *leftButton;
 @property (weak, nonatomic) IBOutlet MKCustomButton *centerButton;
@@ -84,8 +84,11 @@ static NSInteger buttonBeginTagValue = 540;
 //        MKSystemPreferenceItem *targetRightItem = self.dataArray[2];
 //
 //        self.leftButton.displayLabel.text = targetLeftItem.title;
+//        self.leftButton.displayImageView.image = [UIImage imageNamed:targetLeftItem.imageName];
 //        self.centerButton.displayLabel.text = targetCenterItem.title;
+//        self.centerButton.displayImageView.image = [UIImage imageNamed:targetCenterItem.imageName];
 //        self.rightButton.displayLabel.text = targetRightItem.title;
+//        self.rightButton.displayImageView.image = [UIImage imageNamed:targetRightItem.imageName];
     }
 }
 
@@ -119,6 +122,11 @@ static NSInteger buttonBeginTagValue = 540;
 - (IBAction)openSetting:(MKCustomButton *)sender {
     NSInteger btnTag = sender.tag - buttonBeginTagValue;
     [self jumpToSystemPreferenceWithNumber:btnTag];
+}
+
+- (void)selectButtonWithButtonTag:(NSInteger)btnTag {
+    NSInteger tempTag = btnTag - buttonBeginTagValue;
+    [self jumpToSystemPreferenceWithNumber:tempTag];
 }
 
 - (void)jumpToSystemPreferenceWithNumber:(NSInteger)tagNum {

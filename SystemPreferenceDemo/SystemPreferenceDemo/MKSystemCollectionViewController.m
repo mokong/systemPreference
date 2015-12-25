@@ -11,7 +11,7 @@
 #import "MKSystemPreferenceModel.h"
 #import "MKSystemPreferenceItem.h"
 
-@interface MKSystemCollectionViewController ()
+@interface MKSystemCollectionViewController ()<MKCustomButtonDelegate>
 
 @property (nonatomic, strong) NSMutableArray *dataArray; // 存放的是title
 
@@ -47,6 +47,7 @@
 @implementation MKSystemCollectionViewController
 
 static NSString * const reuseIdentifier = @"MKSystemCollectionViewCell";
+static NSInteger buttonTagBeginValue = 240;
 
 - (instancetype)initWithCollectionViewLayout:(UICollectionViewLayout *)layout {
     self = [super initWithCollectionViewLayout:layout];
@@ -205,14 +206,33 @@ static NSString * const reuseIdentifier = @"MKSystemCollectionViewCell";
         cell.displayButton.displayImageView.image = [UIImage imageNamed:item.imageName];
         item.idString = [NSString stringWithFormat:@"%ld", indexPath.row];
         cell.backgroundColor = [UIColor whiteColor];
+        [cell.displayButton addTarget:self action:@selector(displaySettings:) forControlEvents:UIControlEventTouchUpInside];
+        cell.displayButton.tag = buttonTagBeginValue + indexPath.row;
+        cell.displayButton.delegate = self;
     }
 }
 
 #pragma mark <UICollectionViewDelegate>
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
+    NSLog(@"select collectionView");
     [collectionView deselectItemAtIndexPath:indexPath animated:YES];
     NSInteger rowNumber = indexPath.row;
+    [self openSettingsWithValue:rowNumber];
+}
+
+- (void)displaySettings:(MKCustomButton *)sender {
+    NSLog(@"button");
+    NSInteger tagValue = sender.tag - buttonTagBeginValue;
+    [self openSettingsWithValue:tagValue];
+}
+
+- (void)selectButtonWithButtonTag:(NSInteger)btnTag {
+    NSInteger tagValue = btnTag - buttonTagBeginValue;
+    [self openSettingsWithValue:tagValue];
+}
+
+- (void)openSettingsWithValue:(NSInteger)rowNumber {
     MKSystemPreferenceItem *item = self.dataArray[rowNumber];
     NSString *prefs = item.prefs;
     

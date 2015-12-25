@@ -8,8 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol MKCustomButtonDelegate <NSObject>
+
+- (void)selectButtonWithButtonTag:(NSInteger)btnTag;
+
+@end
+
 @interface MKCustomButton : UIButton
 
+@property (nonatomic, weak) id<MKCustomButtonDelegate>delegate;
 @property (nonatomic, strong) UILabel *displayLabel;
 @property (nonatomic, strong) UIImageView *displayImageView;
 
