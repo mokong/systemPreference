@@ -201,7 +201,8 @@ static NSString * const reuseIdentifier = @"MKSystemCollectionViewCell";
 - (void)configureCell:(MKSystemCollectionViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {
     if (self.dataArray) {
         MKSystemPreferenceItem *item = self.dataArray[indexPath.row];
-        cell.displayLabel.text = item.title;
+        cell.displayButton.displayLabel.text = item.title;
+        cell.displayButton.displayImageView.image = [UIImage imageNamed:item.imageName];
         item.idString = [NSString stringWithFormat:@"%ld", indexPath.row];
         cell.backgroundColor = [UIColor whiteColor];
     }

@@ -4,12 +4,14 @@
 target 'SystemPreferenceDemo' do
 
 pod "YYModel"
+pod 'Masonry'
 
 end
 
 target 'SystemPreference' do
 
 pod "YYModel"
+pod 'Masonry'
 
 end
 

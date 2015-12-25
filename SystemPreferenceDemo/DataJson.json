@@ -3,52 +3,62 @@
              {
              "title": "蜂窝移动网络",
              "prefs": "MOBILE_DATA_SETTINGS_ID",
-              "idString": "0"
+              "idString": "0",
+              "imageName": "intnet"
              },
              {
              "title": "Wi-Fi",
              "prefs": "WIFI",
-              "idString": "1"
+              "idString": "1",
+              "imageName": "wifi"
              },
              {
              "title": "电量",
              "prefs": "BATTERY_USAGE",
-              "idString": "2"
+              "idString": "2",
+              "imageName": "batt"
              },
              {
              "title": "隐私定位",
              "prefs": "LOCATION_SERVICES",
-              "idString": "3"
+              "idString": "3",
+              "imageName": "hand"
              },
              {
              "title": "墙纸",
              "prefs": "Wallpaper",
-             "idString": "4"
+             "idString": "4",
+              "imageName": "wallpaper"
              },
              {
              "title": "蓝牙",
              "prefs": "Bluetooth",
-              "idString": "5"
+              "idString": "5",
+              "imageName": "bule"
              },
              {
              "title": "VPN",
              "prefs": "General&path=VPN",
-              "idString": "6"
+              "idString": "6",
+              "imageName": "vpn"
              },
              {
              "title": "通知",
              "prefs": "NOTIFICATIONS_ID",
-              "idString": "7"
+              "idString": "7",
+              "imageName": "notice"
              },
              {
              "title": "后台刷新",
              "prefs": "General&path=AUTO_CONTENT_DOWNLOAD",
-              "idString": "8"
+              "idString": "8",
+              "imageName": "refresh"
              },
               {
               "title": "通用",
               "prefs": "General",
-              "idString": "2"
+              "idString": "2",
+              "imageName": "set"
               }
              ]
 }

@@ -10,21 +10,20 @@
 #import <NotificationCenter/NotificationCenter.h>
 #import "MKSystemPreferenceModel.h"
 #import "MKSystemPreferenceItem.h"
+#import "MKCustomButton.h"
 
 @interface TodayViewController () <NCWidgetProviding>
 
-@property (weak, nonatomic) IBOutlet UIImageView *leftImageView;
-@property (weak, nonatomic) IBOutlet UILabel *leftDisplayLabel;
-@property (weak, nonatomic) IBOutlet UIImageView *centerImageView;
-@property (weak, nonatomic) IBOutlet UILabel *centerDisplayLabel;
-@property (weak, nonatomic) IBOutlet UIImageView *rightImageView;
-@property (weak, nonatomic) IBOutlet UILabel *rightDisplayLabel;
-
+@property (weak, nonatomic) IBOutlet MKCustomButton *leftButton;
+@property (weak, nonatomic) IBOutlet MKCustomButton *centerButton;
+@property (weak, nonatomic) IBOutlet MKCustomButton *rightButton;
 @property (nonatomic, strong) NSArray *dataArray;
 
 @end
 
 @implementation TodayViewController
+
+static NSInteger buttonBeginTagValue = 540;
 
 - (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -63,19 +62,53 @@
 }
 
 - (void)updateUI {
+    [self setupButtonUI:self.leftButton tag:buttonBeginTagValue + 0];
+    [self setupButtonUI:self.centerButton tag:buttonBeginTagValue + 1];
+    [self setupButtonUI:self.rightButton tag:buttonBeginTagValue + 2];
+    
     [self.dataArray enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         MKSystemPreferenceItem *item = (MKSystemPreferenceItem *)obj;
         NSLog(@"%@------%@", item.title, item.idString);
     }];
     if (self.dataArray) {
-        MKSystemPreferenceItem *targetLeftItem = self.dataArray[0];
-        MKSystemPreferenceItem *targetCenterItem = self.dataArray[1];
-        MKSystemPreferenceItem *targetRightItem = self.dataArray[2];
-
-        self.leftDisplayLabel.text = targetLeftItem.title;
-        self.centerDisplayLabel.text = targetCenterItem.title;
-        self.rightDisplayLabel.text = targetRightItem.title;
+        for (int i = 0; i < self.dataArray.count; i++) {
+            MKSystemPreferenceItem *targetItem = self.dataArray[i];
+            MKCustomButton *tempButton = [self targetButtonWithTag:i];
+            if (tempButton) {
+                tempButton.displayLabel.text = targetItem.title;
+                tempButton.displayImageView.image = [UIImage imageNamed:targetItem.imageName];
+            }
+        }
+//        MKSystemPreferenceItem *targetLeftItem = self.dataArray[0];
+//        MKSystemPreferenceItem *targetCenterItem = self.dataArray[1];
+//        MKSystemPreferenceItem *targetRightItem = self.dataArray[2];
+//
+//        self.leftButton.displayLabel.text = targetLeftItem.title;
+//        self.centerButton.displayLabel.text = targetCenterItem.title;
+//        self.rightButton.displayLabel.text = targetRightItem.title;
     }
+}
+
+- (void)setupButtonUI:(MKCustomButton *)targetButton
+                  tag:(NSInteger)tagValue
+{
+    CGFloat fontSize = 12.0;
+    UIColor *fontColor = [UIColor whiteColor];
+    targetButton.displayLabel.font = [UIFont systemFontOfSize:fontSize];
+    targetButton.displayLabel.textColor = fontColor;
+    targetButton.tag = tagValue;
+}
+
+- (MKCustomButton *)targetButtonWithTag:(NSInteger)tag {
+    for (id object in self.view.subviews) {
+        if ([object isKindOfClass:[MKCustomButton class]]) {
+            MKCustomButton *tempButton = (MKCustomButton *)object;
+            if (tempButton.tag == (tag + buttonBeginTagValue)) {
+                return tempButton;
+            }
+        }
+    }
+    return nil;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -83,16 +116,9 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)openCellularSetting:(id)sender {
-    [self jumpToSystemPreferenceWithNumber:0];
-}
-
-- (IBAction)openWIFISetting:(id)sender {
-    [self jumpToSystemPreferenceWithNumber:1];
-}
-
-- (IBAction)openBatterySetting:(id)sender {
-    [self jumpToSystemPreferenceWithNumber:2];
+- (IBAction)openSetting:(MKCustomButton *)sender {
+    NSInteger btnTag = sender.tag - buttonBeginTagValue;
+    [self jumpToSystemPreferenceWithNumber:btnTag];
 }
 
 - (void)jumpToSystemPreferenceWithNumber:(NSInteger)tagNum {

@@ -7,9 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MKCustomButton.h"
 
 @interface MKSystemCollectionViewCell : UICollectionViewCell
 
-@property (weak, nonatomic) IBOutlet UILabel *displayLabel;
+@property (weak, nonatomic) IBOutlet MKCustomButton *displayButton;
 
 @end

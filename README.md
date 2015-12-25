@@ -7,8 +7,10 @@
 
 2. 添加长按拖动cell，参考这篇博客[利用长按手势移动 Table View Cells](http://beyondvincent.com/2014/03/26/2014-03-26-cookbook-moving-table-view-cells-with-a-long-press-gesture/)
 
+3. 添加图标对应图片
+
 ## 使用的技术
 1. 使用CocoaPod引入YYModel, 所以如果下载下来不能用的话，可以试一下重新Pod install
 2. 使用Group实现today Extension与程序的通信
-
+3. 使用Masonry自定义文字、图片上下排列的按钮
 

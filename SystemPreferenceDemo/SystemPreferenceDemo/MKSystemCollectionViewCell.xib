@@ -13,21 +13,18 @@
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                 <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                 <subviews>
-                    <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jWG-RT-rPh">
-                        <rect key="frame" x="6.5" y="15.5" width="37.5" height="18"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                        <nil key="highlightedColor"/>
-                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zt7-aA-fGu" customClass="MKCustomButton">
+                        <rect key="frame" x="10" y="10" width="30" height="30"/>
+                    </button>
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             </view>
             <constraints>
-                <constraint firstItem="jWG-RT-rPh" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="D6J-d0-Gsh"/>
-                <constraint firstItem="jWG-RT-rPh" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="VyE-hf-7l9"/>
+                <constraint firstItem="Zt7-aA-fGu" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="9lA-RU-eUW"/>
+                <constraint firstItem="Zt7-aA-fGu" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="TIg-rI-o3y"/>
             </constraints>
             <connections>
-                <outlet property="displayLabel" destination="jWG-RT-rPh" id="iq3-ZA-rpt"/>
+                <outlet property="displayButton" destination="Zt7-aA-fGu" id="zLX-it-WHs"/>
             </connections>
         </collectionViewCell>
     </objects>

@@ -12,6 +12,7 @@
 
 - (void)awakeFromNib {
     // Initialization code
+    _displayButton.displayLabel.font = [UIFont systemFontOfSize:14.0];
 }
 
 @end

@@ -1,10 +1,13 @@
 PODS:
+  - Masonry (0.6.3)
   - YYModel (0.9.7)
 
 DEPENDENCIES:
+  - Masonry
   - YYModel
 
 SPEC CHECKSUMS:
+  Masonry: ff105a956abcd19a618b2028b121cb638d7a8e2f
   YYModel: 88f4bdec25975a8f642daa0bb572b039a3ab1db1
 
-COCOAPODS: 0.39.0.beta.3
+COCOAPODS: 0.39.0
