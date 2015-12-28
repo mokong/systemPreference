@@ -10,8 +10,9 @@
 #import "MKSystemCollectionViewCell.h"
 #import "MKSystemPreferenceModel.h"
 #import "MKSystemPreferenceItem.h"
+#import "UIButton+ImageTitleSpacing.h"
 
-@interface MKSystemCollectionViewController ()<MKCustomButtonDelegate>
+@interface MKSystemCollectionViewController ()
 
 @property (nonatomic, strong) NSMutableArray *dataArray; // 存放的是title
 
@@ -202,13 +203,16 @@ static NSInteger buttonTagBeginValue = 240;
 - (void)configureCell:(MKSystemCollectionViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {
     if (self.dataArray) {
         MKSystemPreferenceItem *item = self.dataArray[indexPath.row];
-        cell.displayButton.displayLabel.text = item.title;
-        cell.displayButton.displayImageView.image = [UIImage imageNamed:item.imageName];
+
+        [cell.displayButton setTitle:item.title forState:UIControlStateNormal];
+        [cell.displayButton setImage:[UIImage imageNamed:item.imageName] forState:UIControlStateNormal];
+
+        [cell.displayButton centerButtonAndImageWithSpacing:20.0];
+
         item.idString = [NSString stringWithFormat:@"%ld", indexPath.row];
         cell.backgroundColor = [UIColor whiteColor];
         [cell.displayButton addTarget:self action:@selector(displaySettings:) forControlEvents:UIControlEventTouchUpInside];
         cell.displayButton.tag = buttonTagBeginValue + indexPath.row;
-        cell.displayButton.delegate = self;
     }
 }
 
@@ -221,7 +225,7 @@ static NSInteger buttonTagBeginValue = 240;
     [self openSettingsWithValue:rowNumber];
 }
 
-- (void)displaySettings:(MKCustomButton *)sender {
+- (void)displaySettings:(UIButton *)sender {
     NSLog(@"button");
     NSInteger tagValue = sender.tag - buttonTagBeginValue;
     [self openSettingsWithValue:tagValue];

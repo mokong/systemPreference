@@ -10,13 +10,13 @@
 #import <NotificationCenter/NotificationCenter.h>
 #import "MKSystemPreferenceModel.h"
 #import "MKSystemPreferenceItem.h"
-#import "MKCustomButton.h"
+#import "UIButton+ImageTitleSpacing.h"
 
-@interface TodayViewController () <NCWidgetProviding, MKCustomButtonDelegate>
+@interface TodayViewController () <NCWidgetProviding>
 
-@property (weak, nonatomic) IBOutlet MKCustomButton *leftButton;
-@property (weak, nonatomic) IBOutlet MKCustomButton *centerButton;
-@property (weak, nonatomic) IBOutlet MKCustomButton *rightButton;
+@property (weak, nonatomic) IBOutlet UIButton *leftButton;
+@property (weak, nonatomic) IBOutlet UIButton *centerButton;
+@property (weak, nonatomic) IBOutlet UIButton *rightButton;
 @property (nonatomic, strong) NSArray *dataArray;
 
 @end
@@ -62,56 +62,29 @@ static NSInteger buttonBeginTagValue = 540;
 }
 
 - (void)updateUI {
-    [self setupButtonUI:self.leftButton tag:buttonBeginTagValue + 0];
-    [self setupButtonUI:self.centerButton tag:buttonBeginTagValue + 1];
-    [self setupButtonUI:self.rightButton tag:buttonBeginTagValue + 2];
     
-    [self.dataArray enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        MKSystemPreferenceItem *item = (MKSystemPreferenceItem *)obj;
-        NSLog(@"%@------%@", item.title, item.idString);
-    }];
+    self.leftButton.tag = buttonBeginTagValue + 0;
+    self.centerButton.tag = buttonBeginTagValue + 1;
+    self.rightButton.tag = buttonBeginTagValue + 2;
+
     if (self.dataArray) {
-        for (int i = 0; i < self.dataArray.count; i++) {
-            MKSystemPreferenceItem *targetItem = self.dataArray[i];
-            MKCustomButton *tempButton = [self targetButtonWithTag:i];
-            if (tempButton) {
-                tempButton.displayLabel.text = targetItem.title;
-                tempButton.displayImageView.image = [UIImage imageNamed:targetItem.imageName];
-            }
-        }
-//        MKSystemPreferenceItem *targetLeftItem = self.dataArray[0];
-//        MKSystemPreferenceItem *targetCenterItem = self.dataArray[1];
-//        MKSystemPreferenceItem *targetRightItem = self.dataArray[2];
-//
-//        self.leftButton.displayLabel.text = targetLeftItem.title;
-//        self.leftButton.displayImageView.image = [UIImage imageNamed:targetLeftItem.imageName];
-//        self.centerButton.displayLabel.text = targetCenterItem.title;
-//        self.centerButton.displayImageView.image = [UIImage imageNamed:targetCenterItem.imageName];
-//        self.rightButton.displayLabel.text = targetRightItem.title;
-//        self.rightButton.displayImageView.image = [UIImage imageNamed:targetRightItem.imageName];
-    }
-}
 
-- (void)setupButtonUI:(MKCustomButton *)targetButton
-                  tag:(NSInteger)tagValue
-{
-    CGFloat fontSize = 12.0;
-    UIColor *fontColor = [UIColor whiteColor];
-    targetButton.displayLabel.font = [UIFont systemFontOfSize:fontSize];
-    targetButton.displayLabel.textColor = fontColor;
-    targetButton.tag = tagValue;
-}
-
-- (MKCustomButton *)targetButtonWithTag:(NSInteger)tag {
-    for (id object in self.view.subviews) {
-        if ([object isKindOfClass:[MKCustomButton class]]) {
-            MKCustomButton *tempButton = (MKCustomButton *)object;
-            if (tempButton.tag == (tag + buttonBeginTagValue)) {
-                return tempButton;
-            }
-        }
+        MKSystemPreferenceItem *targetLeftItem = self.dataArray[0];
+        MKSystemPreferenceItem *targetCenterItem = self.dataArray[1];
+        MKSystemPreferenceItem *targetRightItem = self.dataArray[2];
+        
+        [self.leftButton setTitle:targetLeftItem.title forState:UIControlStateNormal];
+        [self.leftButton setImage:[UIImage imageNamed:targetLeftItem.imageName] forState:UIControlStateNormal];
+        [self.leftButton centerButtonAndImageWithSpacing:20.0];
+        
+        [self.centerButton setTitle:targetCenterItem.title forState:UIControlStateNormal];
+        [self.centerButton setImage:[UIImage imageNamed:targetCenterItem.imageName] forState:UIControlStateNormal];
+        [self.centerButton centerButtonAndImageWithSpacing:20.0];
+        
+        [self.rightButton setTitle:targetRightItem.title forState:UIControlStateNormal];
+        [self.rightButton setImage:[UIImage imageNamed:targetRightItem.imageName] forState:UIControlStateNormal];
+        [self.rightButton centerButtonAndImageWithSpacing:20.0];
     }
-    return nil;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -119,9 +92,10 @@ static NSInteger buttonBeginTagValue = 540;
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)openSetting:(MKCustomButton *)sender {
-    NSInteger btnTag = sender.tag - buttonBeginTagValue;
+- (IBAction)openSetting:(id)sender {
+    NSInteger btnTag = ((UIButton *)sender).tag - buttonBeginTagValue;
     [self jumpToSystemPreferenceWithNumber:btnTag];
+
 }
 
 - (void)selectButtonWithButtonTag:(NSInteger)btnTag {

@@ -25,8 +25,6 @@
 		3E4B8AEC1C2A41B60018865A /* MKSystemCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E4B8AEA1C2A41B60018865A /* MKSystemCollectionViewCell.m */; };
 		3E4B8AED1C2A41B60018865A /* MKSystemCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3E4B8AEB1C2A41B60018865A /* MKSystemCollectionViewCell.xib */; };
 		3E4B8AF11C2A41D20018865A /* MKSystemCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E4B8AF01C2A41D20018865A /* MKSystemCollectionViewController.m */; };
-		3EA590211C2D2DFD00DEFFA9 /* MKCustomButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EA590201C2D2DFD00DEFFA9 /* MKCustomButton.m */; };
-		3EA590221C2D2DFD00DEFFA9 /* MKCustomButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EA590201C2D2DFD00DEFFA9 /* MKCustomButton.m */; };
 		3EEEAFDA1C192984004DD93E /* DataJson.json in Resources */ = {isa = PBXBuildFile; fileRef = 3EEEAFD91C192984004DD93E /* DataJson.json */; };
 		3EEEAFDE1C192F76004DD93E /* MKSystemPreferenceModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EEEAFDD1C192F76004DD93E /* MKSystemPreferenceModel.m */; };
 		3EEEAFE11C192FA4004DD93E /* MKSystemPreferenceItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EEEAFE01C192FA4004DD93E /* MKSystemPreferenceItem.m */; };
@@ -35,6 +33,8 @@
 		3EEEAFE41C195B0A004DD93E /* DataJson.json in Resources */ = {isa = PBXBuildFile; fileRef = 3EEEAFD91C192984004DD93E /* DataJson.json */; };
 		3EF48E0F1C196AE80038F99F /* SystemPreferenceDemo.entitlements in Resources */ = {isa = PBXBuildFile; fileRef = 3EF48E0D1C19669A0038F99F /* SystemPreferenceDemo.entitlements */; };
 		3EF48E101C196AE90038F99F /* SystemPreferenceDemo.entitlements in Resources */ = {isa = PBXBuildFile; fileRef = 3EF48E0D1C19669A0038F99F /* SystemPreferenceDemo.entitlements */; };
+		3EF7676C1C312A2800CA62EB /* UIButton+ImageTitleSpacing.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EF7676B1C312A2800CA62EB /* UIButton+ImageTitleSpacing.m */; };
+		3EF7676D1C31386400CA62EB /* UIButton+ImageTitleSpacing.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EF7676B1C312A2800CA62EB /* UIButton+ImageTitleSpacing.m */; };
 		B00F83641E14D33DF5A7BDDD /* libPods-SystemPreferenceDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DC7E9BF01C9CC33FC70CB2CC /* libPods-SystemPreferenceDemo.a */; };
 /* End PBXBuildFile section */
 
@@ -90,8 +90,6 @@
 		3E4B8AEB1C2A41B60018865A /* MKSystemCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MKSystemCollectionViewCell.xib; sourceTree = "<group>"; };
 		3E4B8AEF1C2A41D20018865A /* MKSystemCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKSystemCollectionViewController.h; sourceTree = "<group>"; };
 		3E4B8AF01C2A41D20018865A /* MKSystemCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKSystemCollectionViewController.m; sourceTree = "<group>"; };
-		3EA5901F1C2D2DFD00DEFFA9 /* MKCustomButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKCustomButton.h; sourceTree = "<group>"; };
-		3EA590201C2D2DFD00DEFFA9 /* MKCustomButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKCustomButton.m; sourceTree = "<group>"; };
 		3EEEAFD91C192984004DD93E /* DataJson.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = DataJson.json; sourceTree = "<group>"; };
 		3EEEAFDC1C192F76004DD93E /* MKSystemPreferenceModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKSystemPreferenceModel.h; sourceTree = "<group>"; };
 		3EEEAFDD1C192F76004DD93E /* MKSystemPreferenceModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKSystemPreferenceModel.m; sourceTree = "<group>"; };
@@ -99,6 +97,8 @@
 		3EEEAFE01C192FA4004DD93E /* MKSystemPreferenceItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKSystemPreferenceItem.m; sourceTree = "<group>"; };
 		3EF48E0D1C19669A0038F99F /* SystemPreferenceDemo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = SystemPreferenceDemo.entitlements; sourceTree = "<group>"; };
 		3EF48E0E1C196ACF0038F99F /* SystemPreference.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = SystemPreference.entitlements; sourceTree = "<group>"; };
+		3EF7676A1C312A2800CA62EB /* UIButton+ImageTitleSpacing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+ImageTitleSpacing.h"; sourceTree = "<group>"; };
+		3EF7676B1C312A2800CA62EB /* UIButton+ImageTitleSpacing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+ImageTitleSpacing.m"; sourceTree = "<group>"; };
 		46799EDD4BD3BD5A420440E4 /* Pods-SystemPreferenceDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SystemPreferenceDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-SystemPreferenceDemo/Pods-SystemPreferenceDemo.release.xcconfig"; sourceTree = "<group>"; };
 		82155632031209E4127E5285 /* libPods-SystemPreference.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SystemPreference.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		92EEADCA53FD9161A6531D70 /* Pods-SystemPreference.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SystemPreference.release.xcconfig"; path = "Pods/Target Support Files/Pods-SystemPreference/Pods-SystemPreference.release.xcconfig"; sourceTree = "<group>"; };
@@ -178,7 +178,7 @@
 			isa = PBXGroup;
 			children = (
 				3EEEAFDB1C192F4F004DD93E /* model */,
-				3EA5901E1C2D2DDD00DEFFA9 /* CustomButton */,
+				3EA5901E1C2D2DDD00DEFFA9 /* Button Category */,
 				3E4B8AE71C2A41770018865A /* collectionViewController */,
 				3E4B8AE61C2A416F0018865A /* tableViewController */,
 			);
@@ -263,13 +263,13 @@
 			name = controller;
 			sourceTree = "<group>";
 		};
-		3EA5901E1C2D2DDD00DEFFA9 /* CustomButton */ = {
+		3EA5901E1C2D2DDD00DEFFA9 /* Button Category */ = {
 			isa = PBXGroup;
 			children = (
-				3EA5901F1C2D2DFD00DEFFA9 /* MKCustomButton.h */,
-				3EA590201C2D2DFD00DEFFA9 /* MKCustomButton.m */,
+				3EF7676A1C312A2800CA62EB /* UIButton+ImageTitleSpacing.h */,
+				3EF7676B1C312A2800CA62EB /* UIButton+ImageTitleSpacing.m */,
 			);
-			name = CustomButton;
+			name = "Button Category";
 			sourceTree = "<group>";
 		};
 		3EEEAFDB1C192F4F004DD93E /* model */ = {
@@ -521,7 +521,7 @@
 				3EEEAFE11C192FA4004DD93E /* MKSystemPreferenceItem.m in Sources */,
 				3E36C88A1C17C8390003DF50 /* AppDelegate.m in Sources */,
 				3E36C8871C17C8390003DF50 /* main.m in Sources */,
-				3EA590211C2D2DFD00DEFFA9 /* MKCustomButton.m in Sources */,
+				3EF7676C1C312A2800CA62EB /* UIButton+ImageTitleSpacing.m in Sources */,
 				3E4B8AF11C2A41D20018865A /* MKSystemCollectionViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -532,7 +532,7 @@
 			files = (
 				3EEEAFE31C19571D004DD93E /* MKSystemPreferenceModel.m in Sources */,
 				3EEEAFE21C19571B004DD93E /* MKSystemPreferenceItem.m in Sources */,
-				3EA590221C2D2DFD00DEFFA9 /* MKCustomButton.m in Sources */,
+				3EF7676D1C31386400CA62EB /* UIButton+ImageTitleSpacing.m in Sources */,
 				3E36C8B21C1808EF0003DF50 /* TodayViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

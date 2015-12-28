@@ -17,22 +17,34 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="64"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5fm-5F-vFz" customClass="MKCustomButton">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5fm-5F-vFz">
                                 <rect key="frame" x="14" y="2" width="96" height="60"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <state key="normal">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
-                                    <action selector="openSetting:" destination="M4Y-Lb-cyx" eventType="touchUpInside" id="8HC-2H-OiY"/>
+                                    <action selector="openSetting:" destination="M4Y-Lb-cyx" eventType="touchUpInside" id="UaH-de-T95"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e7j-5N-jPF" customClass="MKCustomButton">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e7j-5N-jPF">
                                 <rect key="frame" x="210" y="2" width="96" height="60"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <state key="normal">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
-                                    <action selector="openSetting:" destination="M4Y-Lb-cyx" eventType="touchUpInside" id="KiB-dG-FOi"/>
+                                    <action selector="openSetting:" destination="M4Y-Lb-cyx" eventType="touchUpInside" id="fEQ-76-aiF"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R4f-ui-f8p" customClass="MKCustomButton">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R4f-ui-f8p">
                                 <rect key="frame" x="112" y="2" width="96" height="60"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <state key="normal">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
-                                    <action selector="openSetting:" destination="M4Y-Lb-cyx" eventType="touchUpInside" id="GzO-b9-uH2"/>
+                                    <action selector="openSetting:" destination="M4Y-Lb-cyx" eventType="touchUpInside" id="RSr-X9-9hb"/>
                                 </connections>
                             </button>
                         </subviews>
