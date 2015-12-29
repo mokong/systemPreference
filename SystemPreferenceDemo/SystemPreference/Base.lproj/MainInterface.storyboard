@@ -17,30 +17,30 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="64"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5fm-5F-vFz">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5fm-5F-vFz">
                                 <rect key="frame" x="14" y="2" width="96" height="60"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                <state key="normal">
+                                <state key="normal" title="电量" image="batt">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="openSetting:" destination="M4Y-Lb-cyx" eventType="touchUpInside" id="UaH-de-T95"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e7j-5N-jPF">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e7j-5N-jPF">
                                 <rect key="frame" x="210" y="2" width="96" height="60"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                <state key="normal">
+                                <state key="normal" title="设置" image="set">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="openSetting:" destination="M4Y-Lb-cyx" eventType="touchUpInside" id="fEQ-76-aiF"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R4f-ui-f8p">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R4f-ui-f8p">
                                 <rect key="frame" x="112" y="2" width="96" height="60"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                <state key="normal">
+                                <state key="normal" title="WIFI" image="wifi">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -125,4 +125,9 @@
             <point key="canvasLocation" x="516" y="284.5"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="batt" width="20" height="20"/>
+        <image name="set" width="20" height="20"/>
+        <image name="wifi" width="20" height="20"/>
+    </resources>
 </document>

@@ -13,28 +13,24 @@
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                 <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                 <subviews>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zt7-aA-fGu">
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jtS-YH-qMd">
                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <state key="normal">
+                            <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        </state>
                     </button>
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             </view>
             <constraints>
-                <constraint firstItem="Zt7-aA-fGu" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="6FJ-Pc-rTq"/>
-                <constraint firstItem="Zt7-aA-fGu" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="9lA-RU-eUW"/>
-                <constraint firstItem="Zt7-aA-fGu" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="Ker-pv-9ub"/>
-                <constraint firstItem="Zt7-aA-fGu" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="TIg-rI-o3y"/>
-                <constraint firstAttribute="bottom" secondItem="Zt7-aA-fGu" secondAttribute="bottom" id="XXV-QM-D3I"/>
-                <constraint firstAttribute="trailing" secondItem="Zt7-aA-fGu" secondAttribute="trailing" id="f8a-hP-bZl"/>
+                <constraint firstItem="jtS-YH-qMd" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="0lL-PM-nwb"/>
+                <constraint firstItem="jtS-YH-qMd" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="CW8-zI-VK4"/>
+                <constraint firstAttribute="trailing" secondItem="jtS-YH-qMd" secondAttribute="trailing" id="OC4-Ls-sRX"/>
+                <constraint firstAttribute="bottom" secondItem="jtS-YH-qMd" secondAttribute="bottom" id="VXt-bR-Bvo"/>
             </constraints>
-            <variation key="default">
-                <mask key="constraints">
-                    <exclude reference="9lA-RU-eUW"/>
-                    <exclude reference="TIg-rI-o3y"/>
-                </mask>
-            </variation>
             <connections>
-                <outlet property="displayButton" destination="Zt7-aA-fGu" id="LgC-oy-g8K"/>
+                <outlet property="displayButton" destination="jtS-YH-qMd" id="src-It-8Xk"/>
             </connections>
         </collectionViewCell>
     </objects>

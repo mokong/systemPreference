@@ -10,6 +10,8 @@
 3. 添加图标对应图片
 
 4. 去除自定义Button，由button的titleEdgeInsets和imageEdgeInsets实现文字图片的上下排列，参考这篇博客[如何布局包含Image和Title的UIButton](http://victorchee.github.io/blog/button-layout-with-image-and-title/)
+5. **注意:** 如果用xib的话，必须给button的图片和按钮初始化的内容，否则会发现图片显示不出来；
+
 
 ## 使用的技术
 1. 使用CocoaPod引入YYModel, 所以如果下载下来不能用的话，可以试一下重新Pod install

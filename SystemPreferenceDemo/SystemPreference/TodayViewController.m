@@ -75,15 +75,15 @@ static NSInteger buttonBeginTagValue = 540;
         
         [self.leftButton setTitle:targetLeftItem.title forState:UIControlStateNormal];
         [self.leftButton setImage:[UIImage imageNamed:targetLeftItem.imageName] forState:UIControlStateNormal];
-        [self.leftButton centerButtonAndImageWithSpacing:20.0];
+        [self.leftButton centerButtonAndImageWithSpacing:15.0];
         
         [self.centerButton setTitle:targetCenterItem.title forState:UIControlStateNormal];
         [self.centerButton setImage:[UIImage imageNamed:targetCenterItem.imageName] forState:UIControlStateNormal];
-        [self.centerButton centerButtonAndImageWithSpacing:20.0];
+        [self.centerButton centerButtonAndImageWithSpacing:15.0];
         
         [self.rightButton setTitle:targetRightItem.title forState:UIControlStateNormal];
         [self.rightButton setImage:[UIImage imageNamed:targetRightItem.imageName] forState:UIControlStateNormal];
-        [self.rightButton centerButtonAndImageWithSpacing:20.0];
+        [self.rightButton centerButtonAndImageWithSpacing:15.0];
     }
 }
 

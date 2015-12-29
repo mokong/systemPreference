@@ -203,12 +203,12 @@ static NSInteger buttonTagBeginValue = 240;
 - (void)configureCell:(MKSystemCollectionViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {
     if (self.dataArray) {
         MKSystemPreferenceItem *item = self.dataArray[indexPath.row];
-
-        [cell.displayButton setTitle:item.title forState:UIControlStateNormal];
+        
         [cell.displayButton setImage:[UIImage imageNamed:item.imageName] forState:UIControlStateNormal];
+        [cell.displayButton setTitle:item.title forState:UIControlStateNormal];
 
-        [cell.displayButton centerButtonAndImageWithSpacing:20.0];
-
+        [cell.displayButton layoutButtonWithEdgeInsetsStyle:MKButtonEdgeInsetsStyleTop imageTitleSpace:20.0];
+        
         item.idString = [NSString stringWithFormat:@"%ld", indexPath.row];
         cell.backgroundColor = [UIColor whiteColor];
         [cell.displayButton addTarget:self action:@selector(displaySettings:) forControlEvents:UIControlEventTouchUpInside];
