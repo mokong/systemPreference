@@ -11,6 +11,7 @@
 #import "MKSystemPreferenceModel.h"
 #import "MKSystemPreferenceItem.h"
 #import "UIButton+ImageTitleSpacing.h"
+#import <MobileCoreServices/MobileCoreServices.h>
 
 @interface TodayViewController () <NCWidgetProviding>
 
@@ -105,7 +106,13 @@ static NSInteger buttonBeginTagValue = 540;
 
 - (void)jumpToSystemPreferenceWithNumber:(NSInteger)tagNum {
     MKSystemPreferenceItem *targetItem = self.dataArray[tagNum];
-    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"prefs:root=%@", targetItem.prefs]];
+    NSURL *url;
+    if ([UIDevice currentDevice].systemVersion.floatValue >= 10.0) {
+        url = [NSURL URLWithString:[NSString stringWithFormat:@"Prefs:root=%@", targetItem.prefs]];
+    }
+    else {
+        url = [NSURL URLWithString:[NSString stringWithFormat:@"prefs:root=%@", targetItem.prefs]];
+    }
     NSLog(@"%@", targetItem.prefs);
     [self.extensionContext openURL:url completionHandler:nil];
 }

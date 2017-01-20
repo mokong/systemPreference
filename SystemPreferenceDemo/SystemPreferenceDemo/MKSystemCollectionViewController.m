@@ -11,6 +11,7 @@
 #import "MKSystemPreferenceModel.h"
 #import "MKSystemPreferenceItem.h"
 #import "UIButton+ImageTitleSpacing.h"
+#import <MobileCoreServices/MobileCoreServices.h>
 
 @interface MKSystemCollectionViewController ()
 
@@ -240,9 +241,16 @@ static NSInteger buttonTagBeginValue = 240;
     MKSystemPreferenceItem *item = self.dataArray[rowNumber];
     NSString *prefs = item.prefs;
     
-    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"prefs:root=%@", prefs]];
-    if ([[UIApplication sharedApplication] canOpenURL:url]) {
-        [[UIApplication sharedApplication] openURL:url];
+    if ([UIDevice currentDevice].systemVersion.floatValue < 10.0) {
+        NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"prefs:root=%@", prefs]];
+        if ([[UIApplication sharedApplication] canOpenURL:url]) {
+            [[UIApplication sharedApplication] openURL:url];
+        }
+    }
+    else {
+        NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"Prefs:root=%@", prefs]];
+        Class LSApplicationWorkspace = NSClassFromString(@"LSApplicationWorkspace");
+        [[LSApplicationWorkspace performSelector:@selector(defaultWorkspace)] performSelector:@selector(openSensitiveURL:withOptions:) withObject:url withObject:nil];
     }
 }
 

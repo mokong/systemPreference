@@ -4,7 +4,7 @@
 <dict>
 	<key>com.apple.security.application-groups</key>
 	<array>
-		<string>group.xburner.systemPreference</string>
+		<string>group.com.systemPreferenceDemo.app</string>
 	</array>
 </dict>
 </plist>

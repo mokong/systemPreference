@@ -25,7 +25,7 @@
 }
 
 + (NSArray *)systemPreferenceArray {
-    NSUserDefaults *groupDefaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.xburner.systemPreference"];
+    NSUserDefaults *groupDefaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.huazhu.systemPreferenceDemoGroup"];
     NSData *archivedData = [groupDefaults objectForKey:@"models"];
     if (archivedData == nil) {
         NSLog(@"重新读取");
@@ -44,7 +44,7 @@
 
 + (BOOL)saveDataWithArray:(NSArray *)jsonArray {
     NSData *archiveData = [NSKeyedArchiver archivedDataWithRootObject:jsonArray];
-    NSUserDefaults *groupDefaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.xburner.systemPreference"];
+    NSUserDefaults *groupDefaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.huazhu.systemPreferenceDemoGroup"];
     [groupDefaults setObject:archiveData forKey:@"models"];
     [groupDefaults synchronize];
     return YES;

@@ -35,6 +35,7 @@
 		3EF48E101C196AE90038F99F /* SystemPreferenceDemo.entitlements in Resources */ = {isa = PBXBuildFile; fileRef = 3EF48E0D1C19669A0038F99F /* SystemPreferenceDemo.entitlements */; };
 		3EF7676C1C312A2800CA62EB /* UIButton+ImageTitleSpacing.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EF7676B1C312A2800CA62EB /* UIButton+ImageTitleSpacing.m */; };
 		3EF7676D1C31386400CA62EB /* UIButton+ImageTitleSpacing.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EF7676B1C312A2800CA62EB /* UIButton+ImageTitleSpacing.m */; };
+		60E892681E31BB3000A5EA99 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60E892671E31BB3000A5EA99 /* MobileCoreServices.framework */; };
 		B00F83641E14D33DF5A7BDDD /* libPods-SystemPreferenceDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DC7E9BF01C9CC33FC70CB2CC /* libPods-SystemPreferenceDemo.a */; };
 /* End PBXBuildFile section */
 
@@ -100,6 +101,7 @@
 		3EF7676A1C312A2800CA62EB /* UIButton+ImageTitleSpacing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+ImageTitleSpacing.h"; sourceTree = "<group>"; };
 		3EF7676B1C312A2800CA62EB /* UIButton+ImageTitleSpacing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+ImageTitleSpacing.m"; sourceTree = "<group>"; };
 		46799EDD4BD3BD5A420440E4 /* Pods-SystemPreferenceDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SystemPreferenceDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-SystemPreferenceDemo/Pods-SystemPreferenceDemo.release.xcconfig"; sourceTree = "<group>"; };
+		60E892671E31BB3000A5EA99 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		82155632031209E4127E5285 /* libPods-SystemPreference.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SystemPreference.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		92EEADCA53FD9161A6531D70 /* Pods-SystemPreference.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SystemPreference.release.xcconfig"; path = "Pods/Target Support Files/Pods-SystemPreference/Pods-SystemPreference.release.xcconfig"; sourceTree = "<group>"; };
 		DC7E9BF01C9CC33FC70CB2CC /* libPods-SystemPreferenceDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SystemPreferenceDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -119,6 +121,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				60E892681E31BB3000A5EA99 /* MobileCoreServices.framework in Frameworks */,
 				3E36C8AE1C1808EF0003DF50 /* NotificationCenter.framework in Frameworks */,
 				2F997E2D794E8BEA4F05E20F /* libPods-SystemPreference.a in Frameworks */,
 			);
@@ -207,6 +210,7 @@
 		3E36C8AC1C1808EF0003DF50 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				60E892671E31BB3000A5EA99 /* MobileCoreServices.framework */,
 				3E36C8AD1C1808EF0003DF50 /* NotificationCenter.framework */,
 				DC7E9BF01C9CC33FC70CB2CC /* libPods-SystemPreferenceDemo.a */,
 				82155632031209E4127E5285 /* libPods-SystemPreference.a */,
@@ -350,7 +354,7 @@
 				TargetAttributes = {
 					3E36C8811C17C8380003DF50 = {
 						CreatedOnToolsVersion = 7.1.1;
-						DevelopmentTeam = K5A22TUXRY;
+						DevelopmentTeam = PXB44ETBNH;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
 								enabled = 1;
@@ -359,7 +363,7 @@
 					};
 					3E36C8AA1C1808EF0003DF50 = {
 						CreatedOnToolsVersion = 7.1.1;
-						DevelopmentTeam = K5A22TUXRY;
+						DevelopmentTeam = PXB44ETBNH;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
 								enabled = 1;
@@ -665,10 +669,11 @@
 				CODE_SIGN_ENTITLEMENTS = SystemPreferenceDemo/SystemPreferenceDemo.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = PXB44ETBNH;
 				INFOPLIST_FILE = SystemPreferenceDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.xburner.SystemPreferenceDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.huazhu.SystemPreferenceDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -682,10 +687,11 @@
 				CODE_SIGN_ENTITLEMENTS = SystemPreferenceDemo/SystemPreferenceDemo.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = PXB44ETBNH;
 				INFOPLIST_FILE = SystemPreferenceDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.xburner.SystemPreferenceDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.huazhu.SystemPreferenceDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -698,9 +704,10 @@
 				CODE_SIGN_ENTITLEMENTS = SystemPreference/SystemPreference.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = PXB44ETBNH;
 				INFOPLIST_FILE = SystemPreference/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.xburner.SystemPreferenceDemo.SystemPreference;
+				PRODUCT_BUNDLE_IDENTIFIER = com.huazhu.SystemPreferenceDemo.SystemPreference;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
@@ -714,9 +721,10 @@
 				CODE_SIGN_ENTITLEMENTS = SystemPreference/SystemPreference.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = PXB44ETBNH;
 				INFOPLIST_FILE = SystemPreference/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.xburner.SystemPreferenceDemo.SystemPreference;
+				PRODUCT_BUNDLE_IDENTIFIER = com.huazhu.SystemPreferenceDemo.SystemPreference;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
