@@ -82,14 +82,14 @@
             self.navigationItem.rightBarButtonItem.image = [UIImage imageNamed:@"display_grid"];
             [self setupListViewController];
             [CATransaction flush];
-            [UIView transitionFromView:_listViewController.view toView:_gridViewController.view duration:1.0f options:UIViewAnimationOptionTransitionFlipFromRight completion:nil];
+            [UIView transitionFromView:_listViewController.view toView:_gridViewController.view duration:0.7f options:UIViewAnimationOptionTransitionFlipFromRight completion:nil];
         }
         else {
             self.navigationItem.title = @"列表";
             self.navigationItem.rightBarButtonItem.image = [UIImage imageNamed:@"display_list"];
             [self setupGridViewController];
             [CATransaction flush];
-            [UIView transitionFromView:_gridViewController.view toView:_listViewController.view duration:1.0f options:UIViewAnimationOptionTransitionFlipFromLeft completion:nil];
+            [UIView transitionFromView:_gridViewController.view toView:_listViewController.view duration:0.7f options:UIViewAnimationOptionTransitionFlipFromLeft completion:nil];
         }
     }
 }

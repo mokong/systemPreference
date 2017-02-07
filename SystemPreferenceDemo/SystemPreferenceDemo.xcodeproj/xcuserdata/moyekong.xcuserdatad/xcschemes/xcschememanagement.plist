@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>OCLint.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>6</integer>
+		</dict>
 		<key>SystemPreference.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -23,6 +28,11 @@
 			<true/>
 		</dict>
 		<key>3E36C8AA1C1808EF0003DF50</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>60C337161E4849B6006BC114</key>
 		<dict>
 			<key>primary</key>
 			<true/>
